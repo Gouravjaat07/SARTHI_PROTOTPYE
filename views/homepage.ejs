@@ -1,0 +1,608 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sarthi | AI Career Guidance</title>
+  <link rel="stylesheet" href="/homepage.css" />
+</head>
+<body>
+  <nav>
+    <div class="logo">Sarthi</div>
+    <ul>
+
+      <li><a href="#features">Features</a></li>
+      <li><a href="#impact">Impact</a></li>
+
+      <form method="GET" action="/sarthi/signup">
+        <li><button class="signup">Sign up</button></li>
+      </form>
+      
+      <form action="/sarthi/login" method="GET">
+        <li><button class="login">Log In</button></li>
+      </form>
+
+      <form action="/sarthi/profile" method="GET">
+        <li><button class="profile">Profile</button></li>
+      </form>
+      
+
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Empower Every Youth</h1>
+    <p>AI + Mentorship for career clarity, skill growth, and opportunity access.</p>
+    <div id="career-output"></div>
+  </header>
+
+  <section id="features" class="features">
+    <h2 class="h2">🚀 Key Features</h2>
+    <div class="grid">
+      <div class="card">📊 Profile Analysis<br><span>Academic scores, skills, aspirations</span></div>
+      <div class="card">🧠 Career Mapping<br><span>AI matches interests to careers</span></div>
+      <div class="card">📚 Course Suggestions<br><span>Free & paid courses tailored to goals</span></div>
+      <div class="card">📍 Local Opportunities<br><span>Jobs, internships, competitions</span></div>
+      <div class="card">🗺️ Academy Locator<br><span>Nearby coaching centers with maps</span></div>
+      <div class="card">🧑‍🏫 Mentor Supports<br><span>Live guidance, motivation, tracking</span></div>
+      <div class="card">🎯 Goal Challenges<br><span>Custom 30/60/90-day plans</span></div>
+      <div class="card">💬 Chat Guidance<br><span>Career Q&A powered by OpenAI</span></div>
+    </div>
+  </section>
+
+  <section id="impact" class="impact">
+    <h2>🌍 Impact</h2>
+    <ul>
+      <li>Bridge urban–rural career gap</li>
+      <li>Boost employability and reduce dropouts</li>
+      <li>Empower local economies</li>
+      <li>Close India’s 29M skill gap</li>
+      <li>Scalable mentorship with AI support</li>
+    </ul>
+  </section>
+
+  <section id="start" class="start">
+    <h2>🎯 Ready to Begin?</h2>
+    <p>"Empowering futures, one click at a time Sarthi turns career confusion into confident choices." 🚀
+</p>
+    <a href="#" class="cta">Start your Journey</a>
+  </section>
+
+  <footer>
+    <p></p>
+  </footer>
+
+</body>
+</html> -->
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SARTHI — Main App</title>
+  <meta name="description" content="SARTHI: AI + Human mentorship platform. Profile analysis, resources, challenges, mentorship, chat support, academy locator, local jobs and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="/homepage.css" />
+
+</head>
+<body>
+  <div class="app">
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="logo"><span class="logo-badge"></span> <span>SARTHI</span></div>
+      <div class="mini">Navigate</div>
+      <div class="nav" id="nav">
+        <button class="active" data-target="home">🏠 Overview</button>
+        <button data-target="profile">🧭 Profile Analysis</button>
+        <button data-target="resources">📚 Resources</button>
+        <button data-target="challenges">🏆 Challenges & Goals</button>
+        <button data-target="mentors">👥 Mentorship 1:1</button>
+        <button data-target="locator">🗺 Nearby Academies</button>
+        <button data-target="jobs">💼 Job Match</button>
+        <form method="GET" action="/sarthi/profile">
+          <button data-target="settings">⚙ Settings</button>
+        </form>
+        <form method="GET" action="/sarthi">
+          <button data-target="logout">🚪Logout</button>
+        </form>
+        
+      </div>
+      <div class="streak"><span>🔥</span> <span>Streak: <b id="streakDays">3</b> days</span></div>
+      <div class="credits">© <span id="y"></span> SARTHI • Empowering Rural Careers</div>
+    </aside>
+
+    <!-- ===== MAIN ===== -->
+    <section class="main">
+      <div class="topbar">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="ring" id="menuBtn" title="Menu">☰</div>
+          <div class="search">
+            🔎 <input id="search" placeholder="Search resources, mentors, jobs…" />
+          </div>
+        </div>
+        <div class="actions">
+          <div class="ring" id="notify" title="Notifications">🔔</div>
+          <button class="btn" id="langBtn" title="Language">हिंदी / EN</button>
+          <form method="GET" action="/sarthi/profile">
+            <button class="btn primary" id="startMap">My Profile</button>
+          </form>
+          
+          <div class="ring" title="Profile">👤</div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="container">
+
+          <!-- ===== OVERVIEW / HOME ===== -->
+          <section id="home" class="reveal">
+            <div class="section-title">
+              <h2>Welcome back, <span class="k">Learner</span> 👋</h2>
+              <div class="mini-actions">
+                <span class="pill">AI + Mentor Hybrid</span>
+                <span class="pill">Low-data Mode Ready</span>
+              </div>
+            </div>
+            <div class="grid grid-3">
+              <div class="card hover-up">
+                <h3>Today’s Plan</h3>
+                <ul class="plan" id="todoplan">
+                  <li>✅ Complete “Intro to Python – Loops” <span class="tag">45 min</span></li>
+                  <li>📝 Apply to 2 internships <span class="tag">30 min</span></li>
+                  <li>📞 Mentor check-in at 7:30 PM <span class="tag">15 min</span></li>
+                </ul>
+              </div>
+              <div class="card hover-up">
+                <h3>Progress</h3>
+                <div class="progress" style="margin:8px 0 10px"><span style="width:68%"></span></div>
+                <div class="muted">Weekly goal completion: <b>68%</b></div>
+                <div class="grid grid-3" style="margin-top:12px">
+                  <div class="stat"><div class="num">12</div><div class="lbl">Tasks</div></div>
+                  <div class="stat"><div class="num">4h</div><div class="lbl">Study</div></div>
+                  <div class="stat"><div class="num">2</div><div class="lbl">Interviews</div></div>
+                </div>
+              </div>
+              <div class="card hover-up">
+                <h3>Nearby Signals</h3>
+                <div class="map" id="miniMap">
+                  <!-- pins added by JS -->
+                </div>
+                <div class="muted" style="margin-top:8px">New: 3 academies, 5 jobs near you</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===== PROFILE ANALYSIS ===== -->
+          <section id="profile" class="reveal">
+            <div class="section-title">
+              <h2>Profile Analysis</h2>
+              <div class="mini-actions">
+                <button class="btn" id="recalc">Recalculate</button>
+                <span class="pill">Adaptive Roadmap</span>
+              </div>
+            </div>
+            <div class="grid grid-2">
+              <div class="card">
+                <h3>Strength Radar</h3>
+                <canvas id="radar" width="520" height="320" style="width:100%;max-width:560px"></canvas>
+                <div class="muted" style="margin-top:8px">Skills: Python, Communication, Problem Solving, English, Excel</div>
+              </div>
+              <div class="card">
+                <h3>AI Insights</h3>
+                <ul class="plan">
+                  <li>📈 You match <b>82%</b> for “Junior Data Analyst”.</li>
+                  <li>🧱 Weakness: “Data visualization storytelling”. Add 2 tasks this week.</li>
+                  <li>🧭 Recommended path updated with 3 micro-projects.</li>
+                </ul>
+                <div style="height:10px"></div>
+                <button class="btn primary" id="addProj">Add Micro-Project</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===== RESOURCES ===== -->
+          <section id="resources" class="reveal">
+            <div class="section-title">
+              <h2>Resources Library</h2>
+              <div class="mini-actions">
+                <span class="tag">English</span>
+                <span class="tag">हिंदी</span>
+                <span class="tag">Beginner</span>
+                <span class="tag">Scholarships</span>
+              </div>
+            </div>
+            <div class="grid grid-3" id="resourceGrid">
+              <div class="card hover-up"><h3>Excel for Jobs (हिंदी)</h3><p class="muted">Pivot tables, charts, cleaning.</p><div class="progress" style="margin-top:10px"><span style="width:40%"></span></div></div>
+              <div class="card hover-up"><h3>Spoken English Drills</h3><p class="muted">Daily speaking prompts.</p></div>
+              <div class="card hover-up"><h3>Scholarship Finder</h3><p class="muted">Filter by state & income.</p></div>
+              <div class="card hover-up"><h3>Python Basics → Projects</h3><p class="muted">From loops to mini-apps.</p></div>
+              <div class="card hover-up"><h3>Resume Templates</h3><p class="muted">ATS friendly, regional.</p></div>
+              <div class="card hover-up"><h3>Interview Q&A</h3><p class="muted">Data analyst, support, field ops.</p></div>
+            </div>
+          </section>
+
+          <!-- ===== CHALLENGES & GOALS ===== -->
+          <section id="challenges" class="reveal">
+            <div class="section-title">
+              <h2>Hard Challenges & Custom Goals</h2>
+              <div class="mini-actions">
+                <button class="btn" id="hardMode">Hard Mode</button>
+                <button class="btn" id="newGoal">+ New Goal</button>
+              </div>
+            </div>
+            <div class="grid grid-3" id="goalGrid">
+              <div class="card hover-up">
+                <h3>30-Day Data Sprint</h3>
+                <p class="muted">Daily CSV → insights. Share on Sunday.</p>
+                <div class="progress" style="margin-top:8px"><span style="width:22%"></span></div>
+              </div>
+              <div class="card hover-up">
+                <h3>Speak 15 mins / day</h3>
+                <p class="muted">Record in Hindi/English—mentor feedback.</p>
+                <div class="progress" style="margin-top:8px"><span style="width:48%"></span></div>
+              </div>
+              <div class="card hover-up">
+                <h3>Apply to 10 local jobs</h3>
+                <p class="muted">Tailor resume with project links.</p>
+                <div class="progress" style="margin-top:8px"><span style="width:60%"></span></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===== MENTORSHIP ===== -->
+          <section id="mentors" class="reveal">
+            <div class="section-title">
+              <h2>Human Mentorship • Live 1:1</h2>
+              <div class="mini-actions">
+                <button class="btn primary" id="bookMentor">Book a Session</button>
+                <span class="pill">Goal Accountability</span>
+              </div>
+            </div>
+            <div class="grid grid-2">
+              <div class="card hover-up">
+                <h3>Your Mentor</h3>
+                <p class="muted">Anita • 6 yrs Analytics • Hindi + English</p>
+                <ul class="plan">
+                  <li>🗓 Last session: Tue, 7:45 PM</li>
+                  <li>📝 Notes: “Improve chart narratives; apply to 2 roles.”</li>
+                  <li>🎯 Next goal review in 3 days.</li>
+                </ul>
+              </div>
+              <div class="card hover-up">
+                <h3>Upcoming Slots</h3>
+                <div class="grid grid-3" id="slots">
+                  <button class="btn">Today 7:30 PM</button>
+                  <button class="btn">Tomorrow 6:00 PM</button>
+                  <button class="btn">Sun 11:00 AM</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===== LOCATOR ===== -->
+          <section id="locator" class="reveal">
+            <div class="section-title">
+              <h2>Nearby Academies & Institutes</h2>
+              <div class="mini-actions">
+                <span class="pill">Azure Maps Ready</span>
+                <button class="btn" id="useLocation">Use My Location</button>
+              </div>
+            </div>
+            <div class="grid grid-2">
+              <div class="card">
+                <h3>Map View</h3>
+                <div class="map" id="bigMap"></div>
+              </div>
+              <div class="card">
+                <h3>Institutes Near You</h3>
+                <div class="match">
+                  <div class="meter"></div>
+                  <div>
+                    <b>SkillUp Computer Academy</b><div class="muted">2.1 km • Excel, Python</div>
+                    <div style="margin-top:6px" class="tag">₹ Affordable</div>
+                  </div>
+                </div>
+                <div class="match" style="margin-top:10px">
+                  <div class="meter" style="height:100%"></div>
+                  <div>
+                    <b>Govt ITI Center</b><div class="muted">3.4 km • Data Entry, Electrician</div>
+                    <div style="margin-top:6px" class="tag">Govt Scheme</div>
+                  </div>
+                </div>
+                <div class="match" style="margin-top:10px">
+                  <div class="meter"></div>
+                  <div>
+                    <b>FutureTech Institute</b><div class="muted">4.0 km • Tally, Power BI</div>
+                    <div style="margin-top:6px" class="tag">Scholarships</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===== JOB MATCHING ===== -->
+          <section id="jobs" class="reveal">
+            <div class="section-title">
+              <h2>Local Job Matches</h2>
+              <div class="mini-actions">
+                <button class="btn" id="refreshJobs">Refresh</button>
+                <span class="pill">Skill & Interest Based</span>
+              </div>
+            </div>
+            <div class="grid grid-3" id="jobList">
+              <div class="card hover-up">
+                <h3>Junior Data Analyst</h3>
+                <div class="muted">Ajmer • 82% match</div>
+                <div class="tag" style="margin-top:8px">Excel</div> <div class="tag">SQL</div> <div class="tag">Power BI</div>
+              </div>
+              <div class="card hover-up">
+                <h3>Operations Associate</h3>
+                <div class="muted">Bhilwara • 75% match</div>
+                <div class="tag" style="margin-top:8px">Communication</div> <div class="tag">MS Office</div>
+              </div>
+              <div class="card hover-up">
+                <h3>Support Executive</h3>
+                <div class="muted">Kota • 70% match</div>
+                <div class="tag" style="margin-top:8px">English</div> <div class="tag">Customer Care</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===== SETTINGS ===== -->
+          <section id="settings" class="reveal">
+            <div class="section-title">
+              <h2>Settings</h2>
+              <div class="mini-actions"><span class="pill">Parent Dashboard Ready</span></div>
+            </div>
+            <div class="grid grid-2">
+              <div class="card">
+                <h3>Language</h3>
+                <div class="grid grid-3">
+                  <button class="btn">English</button>
+                  <button class="btn">हिंदी</button>
+                  <button class="btn">+ Regional</button>
+                </div>
+              </div>
+              <div class="card">
+                <h3>Low-Data Mode</h3>
+                <p class="muted">Optimize images & background sync for patchy networks.</p>
+                <button class="btn" id="toggleLow">Enable</button>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Overlay for sidebar + modals -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Mentor Booking Modal -->
+  <div class="modal" id="mentorModal">
+    <div class="sheet">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0">Book 1:1 with Mentor</h3>
+        <button class="btn" id="closeMentor">✕</button>
+      </div>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Pick Slot</h3>
+          <div class="grid grid-3" id="modalSlots">
+            <button class="btn">Today 7:30 PM</button>
+            <button class="btn">Tomorrow 6:00 PM</button>
+            <button class="btn">Sun 11:00 AM</button>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Notes for Mentor</h3>
+          <textarea id="mentorNotes" rows="6" style="width:100%;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:12px;color:var(--txt);padding:10px" placeholder="What do you want help with? (e.g., resume review, project feedback)"></textarea>
+          <div style="height:10px"></div>
+          <button class="btn primary" id="confirmMentor">Confirm Booking</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat widget -->
+  <button class="chat-fab" id="chatFab">💬 Support</button>
+  <div class="chatbox" id="chatBox">
+    <header>
+      <strong>Chat Support</strong>
+      <button class="btn" id="chatClose">✕</button>
+    </header>
+    <div class="chatlog" id="chatLog">
+      <div class="bubble ai">Hi! I’m SARTHI assistant. How can I help?</div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <input id="chatInput" placeholder="Type your message…" style="flex:1;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:12px;color:var(--txt);padding:10px"/>
+      <button class="btn primary" id="chatSend">Send</button>
+    </div>
+  </div>
+
+  <script>
+    // ===== UTIL =====
+    const $ = q => document.querySelector(q);
+    const $$ = q => document.querySelectorAll(q);
+
+    // Year
+    $('#y').textContent = new Date().getFullYear();
+
+    // ===== SIDEBAR TOGGLE (mobile) =====
+    const sidebar = $('#sidebar');
+    const overlay = $('#overlay');
+    $('#menuBtn').addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('show');
+    });
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('show');
+      closeModal();
+    });
+
+    // ===== NAVIGATION: smooth scroll & active state =====
+    $$('#nav button').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        $$('#nav button').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const id = btn.dataset.target;
+        const el = document.getElementById(id);
+        if(el){
+          window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 70, behavior:'smooth'});
+        }
+        // close sidebar on mobile
+        sidebar.classList.remove('open'); overlay.classList.remove('show');
+      });
+    });
+
+    // ===== REVEAL ON SCROLL =====
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
+      });
+    }, {threshold: .12});
+    $$('.reveal').forEach(el=>io.observe(el));
+
+    // ===== MINI MAP PINS =====
+    function addPin(parent){ const p = document.createElement('span'); p.className='pin';
+      p.style.left = (10 + Math.random()*80) + '%';
+      p.style.top  = (15 + Math.random()*70) + '%';
+      parent.appendChild(p);
+    }
+    const miniMap = $('#miniMap'); for(let i=0;i<5;i++) addPin(miniMap);
+    const bigMap  = $('#bigMap');  for(let i=0;i<8;i++) addPin(bigMap);
+
+    // ===== RADAR CHART (no libs) =====
+    (function(){
+      const c = document.getElementById('radar'); if(!c) return;
+      const ctx = c.getContext('2d');
+      const labels = ['Python','Comm','Problem-Solv','English','Excel'];
+      const values = [0.8,0.65,0.75,0.55,0.7]; // 0..1
+      const cx = c.width/2, cy = c.height/2+10, r = 110;
+
+      ctx.clearRect(0,0,c.width,c.height);
+      ctx.strokeStyle = 'rgba(255,255,255,.25)';
+      ctx.fillStyle = 'rgba(124,157,255,.18)';
+      ctx.lineWidth = 1;
+
+      // grid (5 rings)
+      for(let k=1;k<=5;k++){
+        ctx.beginPath();
+        for(let i=0;i<labels.length;i++){
+          const ang = (Math.PI*2 * i/labels.length) - Math.PI/2;
+          const rr = r*k/5;
+          const x = cx + rr*Math.cos(ang);
+          const y = cy + rr*Math.sin(ang);
+          (i===0)?ctx.moveTo(x,y):ctx.lineTo(x,y);
+        }
+        ctx.closePath(); ctx.stroke();
+      }
+      // shape
+      ctx.beginPath();
+      for(let i=0;i<labels.length;i++){
+        const ang = (Math.PI*2 * i/labels.length) - Math.PI/2;
+        const rr = r*values[i];
+        const x = cx + rr*Math.cos(ang);
+        const y = cy + rr*Math.sin(ang);
+        (i===0)?ctx.moveTo(x,y):ctx.lineTo(x,y);
+      }
+      ctx.closePath(); ctx.fill(); ctx.stroke();
+
+      // labels
+      ctx.fillStyle = 'rgba(232,238,251,.9)';
+      ctx.font = '12px Inter';
+      for(let i=0;i<labels.length;i++){
+        const ang = (Math.PI*2 * i/labels.length) - Math.PI/2;
+        const x = cx + (r+16)*Math.cos(ang);
+        const y = cy + (r+16)*Math.sin(ang);
+        ctx.textAlign = x<cx ? 'right' : 'left';
+        ctx.fillText(labels[i], x, y);
+      }
+    })();
+
+    // ===== GOALS: add & hard mode =====
+    $('#newGoal').addEventListener('click', ()=>{
+      const card = document.createElement('div');
+      card.className = 'card hover-up';
+      card.innerHTML = '<h3>Custom Goal</h3><p class="muted">Describe your goal…</p><div class="progress" style="margin-top:8px"><span style="width:5%"></span></div>';
+      $('#goalGrid').appendChild(card);
+      card.classList.add('reveal','show');
+    });
+    let hard = false;
+    $('#hardMode').addEventListener('click', (e)=>{
+      hard = !hard;
+      e.target.textContent = hard ? 'Hard Mode: ON' : 'Hard Mode';
+      document.body.style.filter = hard ? 'contrast(1.05) saturate(1.05)' : 'none';
+    });
+
+    // ===== RESOURCES: quick filter mock (by tag click) =====
+    $$('#resources .tag').forEach(tag=>{
+      tag.addEventListener('click', ()=>{
+        $$('#resourceGrid .card').forEach((c,i)=>{ c.style.display = (Math.random()>.3) ? 'block' : 'none'; });
+      });
+    });
+
+    // ===== JOBS: refresh mock =====
+    $('#refreshJobs').addEventListener('click', ()=>{
+      $('#jobList').classList.add('show'); // ensure revealed
+      $('#jobList').innerHTML += `
+        <div class="card hover-up reveal show">
+          <h3>Data Entry Operator</h3>
+          <div class="muted">Sikar • 69% match</div>
+          <div class="tag" style="margin-top:8px">Typing</div> <div class="tag">Excel</div>
+        </div>`;
+    });
+
+    // ===== MENTOR MODAL =====
+    const mentorModal = $('#mentorModal');
+    function openModal(){ mentorModal.classList.add('show'); overlay.classList.add('show'); }
+    function closeModal(){ mentorModal.classList.remove('show'); overlay.classList.remove('show'); }
+    $('#bookMentor').addEventListener('click', openModal);
+    $('#closeMentor').addEventListener('click', closeModal);
+    $('#confirmMentor').addEventListener('click', ()=>{
+      alert('Session booked ✔ We’ll remind you 30 mins before.');
+      closeModal();
+    });
+
+    // ===== LOCATION =====
+    $('#useLocation').addEventListener('click', ()=>{
+      // mock add more pins
+      for(let i=0;i<5;i++) addPin(bigMap);
+      alert('Location used to fetch nearby academies & jobs (demo).');
+    });
+
+    // ===== CHAT WIDGET =====
+    const chatBox = $('#chatBox'), chatFab = $('#chatFab');
+    const chatClose = $('#chatClose'), chatInput = $('#chatInput'), chatLog = $('#chatLog');
+    chatFab.addEventListener('click', ()=>{ chatBox.style.display = 'flex'; chatFab.style.display='none'; });
+    chatClose.addEventListener('click', ()=>{ chatBox.style.display = 'none'; chatFab.style.display='inline-flex'; });
+    $('#chatSend').addEventListener('click', sendMsg);
+    chatInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter') sendMsg(); });
+    function sendMsg(){
+      const t = chatInput.value.trim(); if(!t) return;
+      chatLog.insertAdjacentHTML('beforeend', `<div class="bubble me">${t}</div>`);
+      chatInput.value='';
+      setTimeout(()=> chatLog.insertAdjacentHTML('beforeend', `<div class="bubble ai">Noted. I’ll route this to your mentor and suggest next steps.</div>`), 400);
+      chatLog.scrollTop = chatLog.scrollHeight;
+    }
+
+    // ===== NOTIFICATIONS / QUICK MAP =====
+    $('#notify').addEventListener('click', ()=> alert('You have 2 new job matches and 1 mentor note.'));
+    $('#startMap').addEventListener('click', ()=> alert('Quick Career Map started (demo).'));
+
+    // ===== LANGUAGE / LOW DATA =====
+    let hindi=false; $('#langBtn').addEventListener('click', (e)=>{ hindi=!hindi; e.target.textContent = hindi ? 'EN / हिंदी' : 'हिंदी / EN'; alert('Language toggled (demo).'); });
+    let low=false; $('#toggleLow').addEventListener('click', (e)=>{ low=!low; e.target.textContent = low ? 'Disable' : 'Enable'; document.body.style.imageRendering = low ? 'pixelated' : 'auto'; alert('Low-data mode ' + (low?'enabled':'disabled') + ' (demo).'); });
+
+    // ===== ACCESSIBILITY: keyboard focus ring on nav =====
+    $$('#nav button').forEach(b=>{ b.addEventListener('keyup',e=>{ if(e.key==='Enter') b.click(); }); });
+  </script>
+</body>
+</html>

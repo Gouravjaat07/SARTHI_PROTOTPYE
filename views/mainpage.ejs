@@ -1,0 +1,261 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SARTHI — AI + Human Mentorship for Rural Career Empowerment</title>
+  <meta name="description" content="SARTHI blends AI insights with human mentorship to bridge the rural–urban career gap. Explore features, impact, innovation, and future benefits." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b1020;
+      --card: rgba(255,255,255,0.06);
+      --txt: #e8eefb;
+      --muted: #9fb0d0;
+      --brand: #7c9dff;
+      --brand-2:#7ef5cf;
+      --accent: #ffd580;
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 10px 30px rgba(0,0,0,0.25);
+      --radius: 18px;
+      --max: 1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--txt);background:
+      radial-gradient(1200px 600px at 10% -10%, #13214a 0%, transparent 60%),
+      radial-gradient(1000px 500px at 110% 10%, #123033 0%, transparent 60%),
+      linear-gradient(180deg,#0a0f1f 0%, #090d1a 60%, #070a14 100%)
+    ;}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin-inline:auto;padding:24px}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(12px);background:linear-gradient(180deg,rgba(11,16,32,0.9),rgba(11,16,32,0.4));border-bottom:1px solid var(--border);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:0.3px}
+    .logo{width:36px;height:36px;border-radius:10px;background:conic-gradient(from 120deg at 50% 50%, var(--brand), var(--brand-2), var(--accent), var(--brand));box-shadow:0 8px 18px rgba(124,157,255,0.35)}
+    .nav a{opacity:.9}
+    .nav a:hover{opacity:1}
+    .menu{display:flex;gap:16px;flex-wrap:wrap}
+    .cta{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border:1px solid var(--border);border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));box-shadow:var(--shadow)}
+    .cta.primary{border-color:transparent;background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#0a1022;font-weight:700}
+    .hero{padding:72px 24px 32px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:28px;align-items:center}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--border);border-radius:999px;background:var(--card);color:var(--muted);font-size:13px}
+    .h1{font-size:clamp(32px,4vw,56px);line-height:1.05;margin:12px 0 10px;font-weight:900;letter-spacing:-0.02em}
+    .lead{font-size:clamp(16px,1.7vw,20px);color:#cfe1ff;opacity:.95}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
+    .glass{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .stat{
+      padding:18px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));
+      border:1px solid var(--border);text-align:center
+    }
+    .stat .num{font-weight:900;font-size:28px}
+    .stat .lbl{font-size:12px;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{padding:22px}
+.card h3{margin:10px 0 8px;font-size:18px}
+.card p{margin:0;color:#c9d7f2}
+
+.section{padding:56px 24px}
+.section h2{font-size:28px;margin:0 0 8px}
+.section .sub{color:var(--muted);margin-bottom:18px}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+
+.tag{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;background:rgba(124,157,255,0.12);border:1px solid rgba(124,157,255,0.35);color:#cfe1ff;font-size:13px}
+
+.impact .kpi{padding:20px 18px}
+.kpi .big{font-size:34px;font-weight:900;letter-spacing:-0.02em}
+.kpi .small{color:var(--muted)}
+
+.list{display:grid;gap:10px}
+.li{display:flex;gap:10px;align-items:flex-start}
+.li .dot{width:10px;height:10px;border-radius:50%;margin-top:7px;background:linear-gradient(90deg,var(--brand),var(--brand-2))}
+
+.banner{padding:18px;border-radius:var(--radius);background:linear-gradient(120deg,rgba(124,157,255,0.15),rgba(126,245,207,0.1));border:1px dashed rgba(124,157,255,0.4)}
+
+footer{padding:36px 24px;border-top:1px solid var(--border);color:var(--muted)}
+
+@media (max-width: 980px){
+  .hero-grid, .grid-2{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .grid-3{grid-template-columns:1fr 1fr}
+  .grid-4{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 540px){
+  .grid-3, .grid-4{grid-template-columns:1fr}
+}
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="logo"></span> <span>SARTHI</span></div>
+      <nav class="menu">
+        <a href="#features">Features</a>
+        <a href="#impact">Impact</a>
+        <a href="#innovation">Innovation</a>
+        <a href="#future">Future Benefits</a>
+        <a href="#mentors">Mentors</a>
+      </nav>
+      <a class="cta primary" href="/sarthi/login" style="margin-left: 18rem;">&nbsp;&nbsp;Login&nbsp;&nbsp;</a>
+      <a class="cta primary" href="/sarthi/signup">Signup</a>
+    </div>
+  </header>  <!-- Hero -->  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="pill">AI + Human Mentorship • Rural Career Empowerment</span>
+        <h1 class="h1">Bridge the rural–urban career gap with <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">personalized guidance</span></h1>
+        <p class="lead">SARTHI combines instant AI career mapping with caring human mentors, connecting students to nearby academies, jobs, and competitions tailored to their goals.</p>
+        <div class="hero-cta">
+          <a class="cta primary" href="#features">Explore Features</a>
+          <a class="cta" href="#impact">See Impact</a>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap">
+          <span class="tag">Azure OpenAI + Azure ML</span>
+          <span class="tag">Azure Maps for Local Opportunities</span>
+          <span class="tag">Mentor Support & Goal Tracking</span>
+        </div>
+      </div>
+      <div class="glass" style="padding:20px">
+        <div class="grid-2">
+          <div class="stat">
+            <div class="num">70%</div>
+            <div class="lbl">Rural students lack guidance</div>
+          </div>
+          <div class="stat">
+            <div class="num">29M</div>
+            <div class="lbl">India skill gap by 2030</div>
+          </div>
+        </div>
+        <div class="banner" style="margin-top:14px">
+          <strong>Mission:</strong> Empower every student—regardless of PIN code—with clear roadmaps, mentors, and nearby opportunities.
+        </div>
+      </div>
+    </div>
+  </section>  <!-- Features -->  <section id="features" class="section">
+    <div class="container">
+      <h2>Key Features</h2>
+      <p class="sub">Everything you need to move from confusion to clarity—step by step.</p>
+      <div class="cards">
+        <div class="card glass">
+          <h3>AI Career Mapping</h3>
+          <p>Understand your strengths, interests, and market demand to get a personalized career map instantly.</p>
+        </div>
+        <div class="card glass">
+          <h3>Nearby Academy Locator</h3>
+          <p>Discover relevant institutes and training centers using location intelligence powered by Azure Maps.</p>
+        </div>
+        <div class="card glass">
+          <h3>Goal‑Based Challenges</h3>
+          <p>Follow structured micro‑goals that build discipline and track weekly progress with your mentor.</p>
+        </div>
+        <div class="card glass">
+          <h3>Live Mentor Support</h3>
+          <p>Talk to real mentors for motivation, doubts, and accountability when it matters most.</p>
+        </div>
+        <div class="card glass">
+          <h3>Local Opportunity Finder</h3>
+          <p>Get curated jobs, internships, scholarships, and competitions near you—updated continuously.</p>
+        </div>
+        <div class="card glass">
+          <h3>Adaptive Roadmaps</h3>
+          <p>Your plan evolves with your progress, new skills learned, and changing market trends.</p>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- Impact -->  <section id="impact" class="section impact">
+    <div class="container">
+      <h2>Impact</h2>
+      <p class="sub">Measurable outcomes that matter to students, families, and communities.</p>
+      <div class="grid-4">
+        <div class="kpi glass">
+          <div class="big">100K+</div>
+          <div class="small">Students guided each year</div>
+        </div>
+        <div class="kpi glass">
+          <div class="big">−20%</div>
+          <div class="small">Career mismatch reduction</div>
+        </div>
+        <div class="kpi glass">
+          <div class="big">Local</div>
+          <div class="small">Jobs & training access</div>
+        </div>
+        <div class="kpi glass">
+          <div class="big">2030</div>
+          <div class="small">Closing India’s 29M skill gap</div>
+        </div>
+      </div>
+      <div class="banner" style="margin-top:18px">
+        <strong>Community First:</strong> We prioritize rural and tier‑3 regions—so talent is discovered where it lives.
+      </div>
+    </div>
+  </section>  <!-- Innovation -->  <section id="innovation" class="section">
+    <div class="container">
+      <h2>Innovation</h2>
+      <p class="sub">Hybrid intelligence that scales guidance with empathy.</p>
+      <div class="grid-3">
+        <div class="card glass">
+          <h3>Hybrid AI + Mentor</h3>
+          <p>AI delivers instant insights while human mentors provide motivation and accountability at scale.</p>
+        </div>
+        <div class="card glass">
+          <h3>Local Opportunity Intelligence</h3>
+          <p>Matches you with nearby academies, jobs, and competitions tailored to your skill journey.</p>
+        </div>
+        <div class="card glass">
+          <h3>Adaptive Career Roadmaps</h3>
+          <p>Dynamic plans that update in real time based on your progress and labor‑market signals.</p>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- Future Benefits -->  <section id="future" class="section">
+    <div class="container">
+      <h2>Future Benefits for Students</h2>
+      <p class="sub">Designed with rural learners in mind—simple, multilingual, and accessible.</p>
+      <div class="grid-2">
+        <div class="glass" style="padding:22px">
+          <div class="list">
+            <div class="li"><span class="dot"></span><div><strong>Regional Languages</strong><br/>Full Hindi + regional language support for easier discovery and guidance.</div></div>
+            <div class="li"><span class="dot"></span><div><strong>Govt Program Integrations</strong><br/>Direct pathways into government skill initiatives and state schemes.</div></div>
+            <div class="li"><span class="dot"></span><div><strong>Freemium Access</strong><br/>Core guidance stays free; advanced mentorship available as needed.</div></div>
+            <div class="li"><span class="dot"></span><div><strong>Low‑Data Mode</strong><br/>Optimized for patchy networks and low‑end devices.</div></div>
+            <div class="li"><span class="dot"></span><div><strong>Scholarship Alerts</strong><br/>Personalized updates on relevant scholarships and fee waivers.</div></div>
+            <div class="li"><span class="dot"></span><div><strong>Parent Dashboard</strong><br/>Transparent progress tracking and guidance in simple language.</div></div>
+          </div>
+        </div>
+        <div class="glass" style="padding:22px">
+          <h3 style="margin-top:0">How it helps users like you</h3>
+          <p>From the first career conversation to the first job, SARTHI stays with you—clarifying options, building skills, and connecting you to real opportunities close to home.</p>
+          <div class="banner" style="margin-top:12px">
+            <strong>Result:</strong> Better decisions, faster progress, fewer detours.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- Mentors / CTA -->  <section id="mentors" class="section">
+    <div class="container">
+      <div class="glass" style="padding:26px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between">
+        <div>
+          <h2 style="margin:0">Ready to meet your mentor?</h2>
+          <p class="sub" style="margin:6px 0 0">Start with a free career mapping in under 5 minutes.</p>
+        </div>
+        <a class="cta primary" id="get-started" href="#">Start Free</a>
+      </div>
+    </div>
+  </section>  <footer>
+    <div class="container" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between">
+      <div style="display:flex;gap:10px;align-items:center"><span class="logo" style="width:26px;height:26px"></span> <span>SARTHI • Bridging the Gap</span></div>
+      <div>© <span id="y"></span> SARTHI. All rights reserved.</div>
+    </div>
+  </footer>  <script>
+    // Year stamp
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script></body>
+</html>

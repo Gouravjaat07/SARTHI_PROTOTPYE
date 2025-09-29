@@ -1,0 +1,216 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile</title>
+  <link href="/dashboard.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="dashboard-nav">
+    <div class="logo">Sarthi</div>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="#">Suggestions</a></li>
+      <li><a href="#">Mentorship</a></li>
+      <li><a href="#">Opportunities</a></li>
+      <li><a href="/">Logout</a></li>
+    </ul>
+  </nav>
+
+  <main class="dashboard-main">
+    <section class="welcome">
+      <h1>Welcome, Gourav</h1>
+      <p>Your personalized career dashboard is ready 🚀</p>
+    </section>
+
+    <section class="cards">
+      <div class="card">📊 Profile Score<br><span>82% match with tech careers</span></div>
+      <div class="card">📚 Suggested Courses<br><span>3 new courses added today</span></div>
+      <div class="card">🧑‍🏫 Mentor Sessions<br><span>Next session: Friday 4PM</span></div>
+      <div class="card">📍 Local Events<br><span>Hackathon in Rohtak this weekend</span></div>
+    </section>
+
+    <section class="actions">
+      <h2>Quick Actions</h2>
+      <button class="cta">Update Profile</button>
+      <button class="cta">View Career Map</button>
+      <button class="cta">Connect with Mentor</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Sarthi. Empowering Futures.</p>
+  </footer>
+</body>
+</html> -->
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SARTHI — Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1020; --panel:rgba(255,255,255,0.06); --txt:#e8eefb; --muted:#9fb0d0; 
+      --brand:#7c9dff; --brand2:#7ef5cf; --accent:#ffd580; --border:rgba(255,255,255,0.12);
+      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.25); --max:1320px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:Inter,system-ui,Segoe UI,Roboto,sans-serif;
+      color:var(--txt);
+      background:linear-gradient(180deg,#0a0f1f 0%,#090d1a 60%,#070a14 100%);
+      height:100vh;display:flex;
+    }
+    .app{display:grid;grid-template-columns:280px 1fr;height:100%;width:100%;}
+    /* Sidebar */
+    .sidebar{
+      padding:20px;border-right:1px solid var(--border);
+      backdrop-filter:saturate(160%) blur(12px);
+      background:linear-gradient(180deg,rgba(11,16,32,.75),rgba(11,16,32,.35));
+      display:flex;flex-direction:column;
+    }
+    .logo{display:flex;align-items:center;gap:12px;font-weight:900;}
+    .logo-badge{width:36px;height:36px;border-radius:10px;
+      background:conic-gradient(from 120deg,var(--brand),var(--brand2),var(--accent),var(--brand));
+    }
+    .nav{margin-top:16px;display:grid;gap:8px;}
+    .nav button{
+      background:transparent;border:1px solid transparent;
+      padding:12px 14px;border-radius:12px;
+      color:var(--txt);cursor:pointer;text-align:left;
+    }
+    .nav button:hover{background:rgba(255,255,255,.05);}
+    .nav button.active{background:rgba(255,255,255,.08);border:1px solid var(--border);}
+    .mini{margin-top:16px;color:var(--muted);font-size:12px;text-transform:uppercase;}
+    .credits{margin-top:auto;color:var(--muted);font-size:12px;}
+    .streak{margin:12px 0;padding:10px;border-radius:12px;
+      background:rgba(255,213,128,.12);border:1px dashed rgba(255,213,128,.45);}
+    /* Main */
+    .main{display:flex;flex-direction:column;height:100%;}
+    .topbar{display:flex;justify-content:space-between;align-items:center;
+      padding:16px 20px;border-bottom:1px solid var(--border);
+      backdrop-filter:blur(8px);background:rgba(11,16,32,.7);}
+    .content{flex:1;overflow:auto;padding:20px;}
+    .container{max-width:var(--max);margin:auto;display:grid;gap:20px;}
+    /* Profile Sections */
+    .card{background:var(--panel);padding:20px;border-radius:var(--radius);
+      border:1px solid var(--border);box-shadow:var(--shadow);}
+    .profile-header{display:flex;gap:20px;align-items:center;}
+    .avatar{width:80px;height:80px;border-radius:50%;
+      background:linear-gradient(135deg,var(--brand),var(--brand2));}
+    .profile-info h2{margin:0;font-size:22px;font-weight:700;}
+    .profile-info p{color:var(--muted);margin:4px 0;}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+    .list-item{padding:10px;border-radius:12px;background:rgba(255,255,255,.05);margin:5px 0;}
+    .btn{padding:10px 14px;border-radius:12px;cursor:pointer;border:0;font-weight:600;}
+    .btn.primary{background:linear-gradient(90deg,var(--brand),var(--brand2));color:#0a0f22;}
+    /* Responsive */
+    @media(max-width:900px){
+      .grid-2{grid-template-columns:1fr;}
+      .app{grid-template-columns:1fr;}
+      .sidebar{position:fixed;left:-280px;top:0;bottom:0;width:280px;z-index:60;transition:.3s;}
+      .sidebar.open{left:0;}
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="logo"><span class="logo-badge"></span><span>SARTHI</span></div>
+    <div class="mini">Navigate</div>
+    <div class="nav">
+      <button data-section="home">🏠 Overview</button>
+      <button class="active" data-section="profile">🧭 Profile Analysis</button>
+      <button data-section="resources">📚 Resources</button>
+      <button data-section="challenges">🏆 Challenges & Goals</button>
+      <button data-section="mentors">👥 Mentorship 1:1</button>
+      <button data-section="locator">🗺 Nearby Academies</button>
+      <button data-section="jobs">💼 Job Match</button>
+      <button data-section="progress">📊 My Progress</button>
+    </div>
+    <div class="mini">Account</div>
+    <div class="nav">
+      <button data-section="edit-profile">✏️ Edit Profile</button>
+      <button data-section="settings">⚙ Settings</button>
+      <form method="GET" action="/sarthi">
+        <button data-section="logout">🚪 Logout</button>
+      </form>
+      
+    </div>
+    <div class="streak">🔥 Streak: <b id="streakDays">3</b> days</div>
+    <div class="credits">© <span id="y"></span> SARTHI</div>
+  </aside>
+
+  <!-- Main -->
+  <section class="main">
+    <div class="topbar">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="btn" id="menuBtn">☰</div>
+        <h2>My Profile</h2>
+      </div>
+      <button class="btn primary">+ Add Goal</button>
+    </div>
+    <div class="content">
+      <div class="container">
+        <!-- Profile Header -->
+        <div class="card profile-header">
+          <div class="avatar"></div>
+          <div class="profile-info">
+            <h2>Gourav</h2>
+            <p>Student • Rural India</p>
+            <p>Interest: Web Development, AI</p>
+          </div>
+        </div>
+
+        <!-- Sections -->
+        <div class="grid-2">
+          <div class="card">
+            <h3>🎯 Custom Goals</h3>
+            <div class="list-item">Complete AI course (60%)</div>
+            <div class="list-item">Practice 30 coding challenges (12/30)</div>
+            <div class="list-item">Build portfolio website (In Progress)</div>
+          </div>
+          <div class="card">
+            <h3>👥 Upcoming Mentor Rounds</h3>
+            <div class="list-item">Session with Anjali (AI Expert) — Sep 10</div>
+            <div class="list-item">Mock Interview — Sep 15</div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>📚 Suggested Courses</h3>
+            <div class="list-item">Full-stack Web Dev by NPTEL</div>
+            <div class="list-item">AI & ML Foundations (Coursera)</div>
+            <div class="list-item">Career Readiness by NSDC</div>
+          </div>
+          <div class="card">
+            <h3>📊 Performance Analytics</h3>
+            <p>Skills Growth: +35% this month</p>
+            <p>Challenges Completed: 12</p>
+            <p>Job Matches Found: 4</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  document.getElementById('menuBtn').addEventListener('click',()=>{
+    document.getElementById('sidebar').classList.toggle('open');
+  });
+</script>
+</body>
+</html>

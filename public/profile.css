@@ -1,0 +1,93 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #f4f6f8;
+  color: #333;
+}
+
+.dashboard-nav {
+  background: #0052cc;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.dashboard-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.dashboard-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dashboard-main {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.welcome h1 {
+  font-size: 2rem;
+  color: #0052cc;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  font-weight: 500;
+}
+
+.card span {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.actions {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.actions .cta {
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #00c896;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.actions .cta:hover {
+  background: #009e7a;
+}
+
+footer {
+  background: #ecf0f1;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
